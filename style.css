@@ -248,8 +248,21 @@ a { color: inherit; text-decoration: none; }
 /* Texto descritivo abaixo do título */
 .hero-lede { font-size: 20px; color: var(--ink-soft); max-width: 56ch; line-height: 1.45; }
 
+/* Gancho de dor no hero — ativa a dor do recrutador antes dos botões */
+.hero-pain {
+  font-family: "Bricolage Grotesque", "Inter Tight", sans-serif;
+  font-style: italic;
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 1.35;
+  color: var(--accent);
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+  margin-top: 28px;
+  max-width: 40ch;
+}
+
 /* Grupo de botões CTA */
-.hero-cta { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+.hero-cta { display: flex; gap: 14px; margin-top: 20px; flex-wrap: wrap; }
 
 /* Grade de metadados do evento (data, local, edição, formato) */
 .hero-meta {
@@ -742,9 +755,23 @@ section { padding: 96px 0; }
 .cta-contact-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; }
 .cta-phone { font-family: "Bricolage Grotesque"; font-weight: 600; font-size: 32px; letter-spacing: -0.02em; color: #fff; }
 
+/* Gancho de dor — pergunta que ativa a consciência do recrutador antes do botão */
+.cta-pain {
+  font-family: "Bricolage Grotesque", "Inter Tight", sans-serif;
+  font-style: italic;
+  font-size: clamp(19px, 2.4vw, 26px);
+  line-height: 1.3;
+  color: rgba(255, 255, 255, .95);
+  border-left: 3px solid rgba(255, 255, 255, .45);
+  padding-left: 20px;
+  margin: 0;
+  max-width: 38ch;
+}
+
 @media (max-width: 880px) {
   .cta-box   { padding: 48px 28px; }
   .cta-benefits { grid-template-columns: 1fr; }
+  .cta-pain { font-size: 18px; }
 }
 
 /* ============================================================
