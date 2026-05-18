@@ -4,13 +4,13 @@ Landing page institucional desenvolvida para a divulgação da Feira Emprego Já
 
 ---
 
-## ✨ Sobre o projeto
+## Sobre o projeto
 
 A landing page apresenta informações sobre o evento, resultados anteriores, benefícios para empresas participantes e contato direto via WhatsApp.
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - HTML5
 - CSS3
@@ -18,7 +18,7 @@ A landing page apresenta informações sobre o evento, resultados anteriores, be
 
 ---
 
-## 📁 Estrutura do projeto
+## Estrutura do projeto
 
 ```bash
 .
@@ -34,7 +34,7 @@ A landing page apresenta informações sobre o evento, resultados anteriores, be
 
 ---
 
-## 🎯 Funcionalidades
+## Funcionalidades
 
 - Hero section com vídeo
 - Navegação fixa
@@ -48,7 +48,7 @@ A landing page apresenta informações sobre o evento, resultados anteriores, be
 
 ---
 
-## 📱 Responsividade
+## Responsividade
 
 O projeto foi desenvolvido para:
 
@@ -58,36 +58,7 @@ O projeto foi desenvolvido para:
 
 ---
 
-## ⚡ Performance
-
-O projeto utiliza:
-
-- preload de assets críticos
-- imagens otimizadas
-- CSS organizado
-- estrutura leve sem frameworks
-
----
-
-## ▶️ Como executar o projeto
-
-Clone o repositório:
-
-```bash
-git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
-```
-
-Entre na pasta:
-
-```bash
-cd SEU-REPOSITORIO
-```
-
-Abra o arquivo `index.html` no navegador.
-
----
-
-## 📞 Contato
+## Contato
 
 Feira Emprego Já 2026  
 Americana — SP
@@ -96,6 +67,6 @@ WhatsApp: (19) 98327-5538
 
 ---
 
-## 📄 Licença
+## Licença
 
 Projeto de uso institucional/private.
