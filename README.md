@@ -6,14 +6,6 @@ Landing page institucional desenvolvida para a divulgação da Feira Emprego Já
 
 ## ✨ Sobre o projeto
 
-O projeto foi criado com foco em:
-
-- Conversão de empresas expositoras
-- Design moderno e premium
-- Responsividade
-- Performance
-- Experiência visual profissional
-
 A landing page apresenta informações sobre o evento, resultados anteriores, benefícios para empresas participantes e contato direto via WhatsApp.
 
 ---
@@ -23,8 +15,6 @@ A landing page apresenta informações sobre o evento, resultados anteriores, be
 - HTML5
 - CSS3
 - Google Fonts
-- Layout Responsivo
-- Design moderno institucional
 
 ---
 
