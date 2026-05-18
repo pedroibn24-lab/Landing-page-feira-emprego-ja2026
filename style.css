@@ -19,7 +19,7 @@
    RESET BÁSICO
    ============================================================ */
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
 /* ============================================================
    TIPOGRAFIA E CORPO
@@ -98,9 +98,23 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--line);
 }
 
-/* Esconde os links em telas pequenas */
+/* CTA do nav: visível só no mobile */
+.nav-cta-mobile { display: none; }
+
+/* Esconde os links e mostra o CTA em telas pequenas */
 @media (max-width: 760px) {
   .nav-links { display: none; }
+  .nav-cta-mobile {
+    display: inline-flex;
+    font-size: 13px;
+    padding: 9px 18px;
+  }
+}
+
+/* Reduz padding lateral em telas muito pequenas */
+@media (max-width: 480px) {
+  .container { padding: 0 20px; }
+  .nav-inner  { padding: 10px 20px; }
 }
 
 /* ============================================================
@@ -343,6 +357,15 @@ a { color: inherit; text-decoration: none; }
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
   .ticket { transform: none; }
   .hero-meta { grid-template-columns: 1fr 1fr; }
+}
+
+/* Mobile: vídeo em landscape e ticket oculto para reduzir altura */
+@media (max-width: 600px) {
+  .hero { padding: 40px 0 64px; }
+  .hero-video-wrap { aspect-ratio: 16 / 9; max-height: none; }
+  .ticket { display: none; }
+  .hero-meta { gap: 16px 20px; }
+  .hero-meta-item strong { font-size: 18px; }
 }
 
 /* ============================================================
