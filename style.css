@@ -1,0 +1,756 @@
+/* ============================================================
+   VARIÁVEIS GLOBAIS
+   Paleta de cores e largura máxima do layout
+   ============================================================ */
+:root {
+  --cream:        #f5f1e8; /* fundo principal — creme claro */
+  --cream-2:      #ece6d6; /* fundo alternativo — creme médio */
+  --ink:          #14110d; /* cor escura principal */
+  --ink-soft:     #3a342c; /* cor escura secundária */
+  --muted:        #7a7367; /* texto auxiliar */
+  --line:         #d9d2c0; /* bordas e divisores */
+  --accent:       #d2532a; /* laranja principal */
+  --accent-deep:  #a93e1d; /* laranja escuro (hover) */
+  --green:        #2f5d3d; /* verde para avatares */
+  --max:          1240px;  /* largura máxima dos containers */
+}
+
+/* ============================================================
+   RESET BÁSICO
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* ============================================================
+   TIPOGRAFIA E CORPO
+   ============================================================ */
+body {
+  font-family: "Inter Tight", system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Títulos usam Bricolage Grotesque para maior impacto visual */
+h1, h2, h3, h4 {
+  font-family: "Bricolage Grotesque", "Inter Tight", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  margin: 0;
+  text-wrap: balance; /* distribui o texto de forma equilibrada */
+}
+
+p { margin: 0; text-wrap: pretty; }
+a { color: inherit; text-decoration: none; }
+
+/* Container centralizado com padding lateral */
+.container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+/* ============================================================
+   NAVEGAÇÃO — barra fixa no topo com glassmorphism
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(245, 241, 232, 0.85);
+  backdrop-filter: blur(10px);           /* efeito de vidro fosco */
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 32px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+/* Logo da marca */
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-logo { height: 64px; width: auto; display: block; }
+
+/* Links de navegação interna — pills com hover suave */
+.nav-links {
+  display: flex;
+  gap: 4px;
+  font-size: 12px;
+  font-family: "JetBrains Mono";
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.nav-links a {
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+}
+.nav-links a:hover {
+  color: var(--accent);
+  background: var(--cream-2);
+  border-color: var(--line);
+}
+
+/* Esconde os links em telas pequenas */
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+}
+
+/* ============================================================
+   BOTÕES — variantes: padrão, outline e accent (laranja)
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.18s, transform 0.18s;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+}
+.btn:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+
+/* Botão transparente com borda */
+.btn.outline { background: transparent; color: var(--ink); }
+.btn.outline:hover { background: var(--ink); color: var(--cream); }
+
+/* Botão laranja de destaque */
+.btn.accent { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.accent:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+
+.btn .arr { display: inline-block; transform: translateY(-1px); }
+
+/* ============================================================
+   HERO — seção principal com imagem de fundo e overlay
+   ============================================================ */
+.hero {
+  padding: 64px 0 96px;
+  position: relative;
+  overflow: hidden;
+  background: url('assets/fidamFrente.jpeg') center / cover no-repeat;
+}
+
+/* Overlay claro para manter o texto legível sobre a foto */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 241, 232, 0.82);
+}
+
+/* Grid de duas colunas: texto (esq) e vídeo/ticket (dir) */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 64px;
+  align-items: end;
+  position: relative;
+  z-index: 1; /* fica acima do overlay */
+}
+
+/* Etiqueta de data/local acima do título */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.4);
+}
+/* Ponto laranja pulsante na etiqueta */
+.eyebrow .dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(210, 83, 42, .18);
+}
+
+/* Título principal responsivo */
+.hero h1 {
+  font-size: clamp(48px, 8vw, 104px);
+  margin: 28px 0;
+  font-weight: 600;
+}
+/* Destaque em itálico laranja dentro do h1 */
+.hero h1 em {
+  font-style: italic;
+  font-family: "Bricolage Grotesque";
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* Coluna direita: vídeo em cima, ticket embaixo */
+.hero-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+/* Container do vídeo vertical */
+.hero-video-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  max-height: 700px;
+  box-shadow: 0 16px 48px rgba(20, 17, 13, .2);
+}
+.hero-video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Texto descritivo abaixo do título */
+.hero-lede { font-size: 20px; color: var(--ink-soft); max-width: 56ch; line-height: 1.45; }
+
+/* Grupo de botões CTA */
+.hero-cta { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+
+/* Grade de metadados do evento (data, local, edição, formato) */
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  margin-top: 48px;
+}
+.hero-meta-item small {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.hero-meta-item strong {
+  font-family: "Bricolage Grotesque";
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   TICKET DECORATIVO — card escuro com dados do evento
+   ============================================================ */
+.ticket {
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 24px;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 30px 80px -30px rgba(20, 17, 13, .4);
+  transform: rotate(1.5deg); /* leve inclinação decorativa */
+}
+
+/* Meias-luas nas extremidades do ticket (efeito perfurado) */
+.ticket::before,
+.ticket::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: var(--cream);
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ticket::before { top: -12px; }
+.ticket::after  { bottom: -12px; }
+
+.ticket-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 22px;
+  border-bottom: 1px dashed rgba(245, 241, 232, .25);
+  margin-bottom: 22px;
+}
+
+.ticket-edition { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(245, 241, 232, .6); }
+.ticket-edition strong { display: block; font-family: "Bricolage Grotesque"; font-size: 48px; letter-spacing: -0.04em; color: var(--cream); margin-top: 6px; font-weight: 700; }
+
+/* Carimbo circular "Seja Expositor" */
+.ticket-stamp {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.1;
+  transform: rotate(-8deg);
+}
+
+.ticket-rows { display: grid; gap: 18px; }
+.ticket-row  { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.ticket-field small { display: block; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245, 241, 232, .55); margin-bottom: 4px; }
+.ticket-field strong { font-family: "Bricolage Grotesque"; font-weight: 600; font-size: 18px; color: var(--cream); }
+
+.ticket-foot {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(245, 241, 232, .25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(245, 241, 232, .7);
+}
+
+/* Código de barras decorativo — alturas via nth-child */
+.barcode { display: flex; gap: 2px; height: 28px; align-items: flex-end; }
+.barcode span { display: block; width: 2px; background: var(--cream); border-radius: 1px; }
+.barcode span:nth-child(1)  { height: 28px; }
+.barcode span:nth-child(2)  { height: 22px; }
+.barcode span:nth-child(3)  { height: 28px; }
+.barcode span:nth-child(4)  { height: 18px; }
+.barcode span:nth-child(5)  { height: 28px; }
+.barcode span:nth-child(6)  { height: 26px; }
+.barcode span:nth-child(7)  { height: 14px; }
+.barcode span:nth-child(8)  { height: 28px; }
+.barcode span:nth-child(9)  { height: 24px; }
+.barcode span:nth-child(10) { height: 28px; }
+.barcode span:nth-child(11) { height: 20px; }
+.barcode span:nth-child(12) { height: 28px; }
+
+/* Hero responsivo: coluna única em telas menores */
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .ticket { transform: none; }
+  .hero-meta { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================================
+   SEÇÕES — espaçamento e elementos de cabeçalho padrão
+   ============================================================ */
+section { padding: 96px 0; }
+
+/* Etiqueta numerada acima dos títulos de seção */
+.section-eyebrow {
+  font-family: "JetBrains Mono";
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+
+.section-title { font-size: clamp(36px, 5vw, 64px); font-weight: 600; max-width: 18ch; }
+.section-lede  { color: var(--ink-soft); font-size: 19px; margin-top: 20px; max-width: 60ch; line-height: 1.5; }
+
+/* ============================================================
+   SEÇÃO 01 — Por que participar (4 pilares)
+   ============================================================ */
+.why { background: var(--cream); border-top: 1px solid var(--line); }
+
+/* Grade de pilares com bordas formando uma tabela */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 72px;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.pillar {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 36px 28px 40px;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-height: 320px;
+  transition: background 0.2s;
+}
+.pillar:hover { background: var(--cream-2); }
+
+.pillar-num  { font-family: "JetBrains Mono"; font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
+.pillar-icon { width: 44px; height: 44px; display: grid; place-items: center; color: var(--accent); }
+.pillar h3   { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
+.pillar p    { color: var(--ink-soft); font-size: 15px; line-height: 1.5; }
+
+@media (max-width: 960px) { .pillars { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .pillars { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   SEÇÃO 02 — Resultados anteriores (fundo escuro + estatísticas)
+   ============================================================ */
+.results { background: var(--ink); color: var(--cream); }
+
+/* Sobrescreve a cor da etiqueta de seção para o fundo escuro */
+.results .section-eyebrow       { color: var(--accent); }
+.results .section-eyebrow::before { background: var(--accent); }
+
+/* Layout: texto à esquerda, imagem vertical à direita */
+.results-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+}
+.results-head h2 { color: var(--cream); }
+.results-head p  { color: rgba(245, 241, 232, .7); max-width: 40ch; font-size: 17px; margin-top: 16px; }
+
+/* Container da imagem da edição anterior */
+.results-image {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 420px;
+  aspect-ratio: 3 / 4;
+  background: rgba(255, 255, 255, .06);
+  border: 1px dashed rgba(245, 241, 232, .2);
+  flex-shrink: 0;
+}
+.results-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Responsivo: imagem ocupa largura total em telas pequenas */
+@media (max-width: 760px) {
+  .results-head  { grid-template-columns: 1fr; }
+  .results-image { width: 100%; aspect-ratio: 16 / 9; }
+}
+
+/* Grade de 4 estatísticas com separadores verticais */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 72px;
+  border-top: 1px solid rgba(245, 241, 232, .15);
+}
+
+.stat { padding: 40px 24px; border-right: 1px solid rgba(245, 241, 232, .15); }
+.stat:last-child { border-right: none; }
+
+.stat-label {
+  font-family: "JetBrains Mono";
+  font-size: 11px;
+  color: rgba(245, 241, 232, .55);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 18px;
+}
+.stat-num {
+  font-family: "Bricolage Grotesque";
+  font-size: clamp(56px, 7vw, 96px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--cream);
+}
+.stat-num .plus { color: var(--accent); }
+.stat-sub { color: rgba(245, 241, 232, .6); font-size: 13px; margin-top: 12px; }
+
+@media (max-width: 760px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat  { border-bottom: 1px solid rgba(245, 241, 232, .15); }
+  .stat:nth-child(2n) { border-right: none; }
+}
+
+/* ============================================================
+   BANNER DE URGÊNCIA — faixa escura com ponto animado
+   ============================================================ */
+.urgency-banner {
+  background: var(--ink);
+  padding: 20px 0;
+  border-top: 1px solid rgba(245, 241, 232, .1);
+  border-bottom: 1px solid rgba(245, 241, 232, .1);
+}
+.urgency-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.urgency-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(245, 241, 232, .85);
+  font-size: 15px;
+}
+
+/* Ponto laranja que pulsa para chamar atenção */
+.urgency-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(210, 83, 42, .25);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(210, 83, 42, .25); }
+  50%       { box-shadow: 0 0 0 8px rgba(210, 83, 42, .1); }
+}
+
+/* ============================================================
+   SEÇÃO 03 — Depoimentos (cases de sucesso)
+   ============================================================ */
+.testimonials { background: var(--cream); border-top: 1px solid var(--line); }
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 64px;
+}
+
+.testi {
+  background: var(--cream-2);
+  border-radius: 20px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  border: 1px solid var(--line);
+}
+.testi .stars   { color: var(--accent); letter-spacing: 4px; font-size: 14px; }
+.testi-quote    { font-size: 20px; line-height: 1.4; font-family: "Bricolage Grotesque"; font-weight: 500; letter-spacing: -0.01em; }
+.testi-author   { display: flex; align-items: center; gap: 14px; margin-top: auto; }
+.testi-author-name { font-weight: 600; font-size: 15px; }
+
+/* Avatar circular colorido com as iniciais do autor */
+.avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--cream); display: grid; place-items: center; font-weight: 600; font-size: 13px; letter-spacing: 0.04em; }
+.avatar.accent { background: var(--accent); }
+.avatar.green  { background: var(--green); }
+.avatar.ink    { background: var(--ink); }
+
+@media (max-width: 760px) { .testi-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   SEÇÃO 04 — O evento (detalhes + infraestrutura)
+   Usa imagem ilustrativa como fundo com overlay
+   ============================================================ */
+.event {
+  background: url('assets/ilustraçãoFeiraEmprego_page-0001.jpg') center / cover no-repeat;
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+/* Overlay claro para legibilidade do conteúdo */
+.event::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(236, 230, 214, 0.88);
+}
+.event .container  { position: relative; z-index: 1; }
+.event .section-title { margin-bottom: 56px; }
+
+/* Grid: card de detalhes (esq) + card de infraestrutura (dir) */
+.event-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: stretch; }
+
+/* Card de informações do evento */
+.event-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 40px;
+  display: grid;
+  gap: 28px;
+}
+
+/* Linha de detalhe: ícone + rótulo + valor */
+.event-row {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.event-row:last-child { padding-bottom: 0; border-bottom: none; }
+.event-row .ico { color: var(--accent); margin-top: 2px; }
+.event-row h4   { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-family: "Inter Tight"; font-weight: 500; margin-bottom: 6px; }
+.event-row p    { font-family: "Bricolage Grotesque"; font-size: 22px; font-weight: 500; letter-spacing: -0.01em; }
+
+/* Card de infraestrutura com fundo escuro */
+.infra {
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.infra h3 { font-size: 28px; }
+.infra p  { color: rgba(245, 241, 232, .7); }
+.infra ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.infra li { display: grid; grid-template-columns: 24px 1fr; gap: 14px; align-items: center; color: rgba(245, 241, 232, .85); }
+.infra li svg { color: var(--accent); }
+
+@media (max-width: 880px) { .event-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   SEÇÃO 05 — CTA final (chamada para ação)
+   Box laranja centralizado com contato via WhatsApp
+   ============================================================ */
+.cta { background: var(--cream); border-top: 1px solid var(--line); padding: 120px 0; }
+
+.cta-box {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 32px;
+  padding: 72px 64px;
+  position: relative;
+  overflow: hidden;
+}
+/* Círculo decorativo no canto superior direito */
+.cta-box::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -120px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: var(--accent-deep);
+  opacity: 0.5;
+}
+
+/* Conteúdo centralizado sobre o círculo decorativo */
+.cta-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.cta-box h2   { font-size: clamp(40px, 5vw, 64px); color: #fff; max-width: 16ch; }
+.cta-box .lede { color: rgba(255, 255, 255, .85); font-size: 19px; margin-top: 20px; max-width: 44ch; }
+
+/* Etiqueta de seção adaptada ao fundo laranja */
+.cta-box .section-eyebrow { color: rgba(255, 255, 255, .8); }
+
+/* Lista de benefícios em 2 colunas */
+.cta-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 32px;
+}
+.cta-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, .85);
+  font-size: 15px;
+}
+
+/* Ícone de check circular */
+.cb-check {
+  color: #fff;
+  background: rgba(255, 255, 255, .2);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* Card de contato com efeito glassmorphism */
+.cta-contact {
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  padding: 28px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  backdrop-filter: blur(4px);
+  width: 100%;
+}
+.cta-contact small { font-family: "JetBrains Mono"; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, .7); }
+
+/* Número e botão lado a lado */
+.cta-contact-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.cta-phone { font-family: "Bricolage Grotesque"; font-weight: 600; font-size: 32px; letter-spacing: -0.02em; color: #fff; }
+
+@media (max-width: 880px) {
+  .cta-box   { padding: 48px 28px; }
+  .cta-benefits { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+footer {
+  background: var(--ink);
+  color: rgba(245, 241, 232, .5);
+  border-top: 1px solid var(--ink);
+  padding: 48px 0;
+  font-size: 14px;
+}
+.foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+footer small { font-family: "JetBrains Mono"; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* ============================================================
+   MARQUEE — faixa de texto animada em loop infinito
+   ============================================================ */
+.scroll-marquee {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--cream);
+  overflow: hidden;
+  padding: 20px 0;
+}
+.marquee-track {
+  display: flex;
+  gap: 56px;
+  white-space: nowrap;
+  animation: scroll 38s linear infinite;
+  font-family: "Bricolage Grotesque";
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink-soft);
+}
+/* Separador em bola laranja entre os itens */
+.marquee-track span { display: inline-flex; align-items: center; gap: 56px; }
+.marquee-track span::after { content: "●"; color: var(--accent); font-size: 14px; }
+
+/* Animação de rolagem horizontal */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

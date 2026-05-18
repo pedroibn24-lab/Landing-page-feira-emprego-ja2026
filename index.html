@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Feira Emprego Já 2026 — O maior encontro entre empresas, talentos e networking de Americana/SP. 01 de Agosto, FIDAM Americana.">
+
+  <title>Feira Emprego Já 2026 — Seja um expositor</title>
+
+  <!-- Pré-conexão com o servidor de fontes para reduzir latência -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fontes: Bricolage Grotesque (títulos), Inter Tight (corpo), JetBrains Mono (etiquetas) -->
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Pré-carrega os ativos críticos visíveis acima da dobra -->
+  <link rel="preload" href="assets/fidamFrente.jpeg" as="image">
+  <link rel="preload" href="assets/logoEmpregoJa.png" as="image">
+  <link rel="preload" href="assets/videoFeiraEmprego.mp4" as="video" type="video/mp4">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ========================================================
+     NAVEGAÇÃO — barra fixa no topo com links âncora
+     ======================================================== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <!-- Logo da feira -->
+    <div class="brand">
+      <img src="assets/logoEmpregoJa.png" alt="Feira Emprego Já" class="brand-logo" width="auto" height="64">
+    </div>
+
+    <!-- Links de navegação interna -->
+    <div class="nav-links">
+      <a href="#porque">Por que participar</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#evento">O evento</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========================================================
+     HERO — seção principal com título, CTA e vídeo
+     ======================================================== -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Coluna esquerda: texto e chamada para ação -->
+      <div>
+        <!-- Etiqueta com data e local do evento -->
+        <span class="eyebrow">
+          <span class="dot"></span> 01 de Agosto de 2026 · FIDAM Americana
+        </span>
+
+        <h1>Conecte sua empresa aos <em>melhores talentos</em> da região.</h1>
+
+        <p class="hero-lede">A Feira Emprego Já é o ambiente estratégico que aproxima a sua marca de milhares de candidatos qualificados — em um único local, em um único dia. Oportunidades reais de contratação, parcerias e networking corporativo.</p>
+
+        <!-- Botões de ação -->
+        <div class="hero-cta">
+          <a href="#contato" class="btn accent">Quero ser expositor <span class="arr">→</span></a>
+          <a href="#porque" class="btn outline">Conheça o evento</a>
+        </div>
+
+        <!-- Informações rápidas do evento -->
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <small>Data</small>
+            <strong>01 · Ago · 2026</strong>
+          </div>
+          <div class="hero-meta-item">
+            <small>Local</small>
+            <strong>FIDAM Americana</strong>
+          </div>
+          <div class="hero-meta-item">
+            <small>Edição</small>
+            <strong>2ª edição</strong>
+          </div>
+          <div class="hero-meta-item">
+            <small>Formato</small>
+            <strong>Presencial · 1 dia</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna direita: vídeo + ticket decorativo -->
+      <div class="hero-right-col">
+
+        <!-- Vídeo do evento com player nativo -->
+        <div class="hero-video-wrap">
+          <video
+            src="assets/videoFeiraEmprego.mp4"
+            autoplay
+            muted
+            controls
+            playsinline
+            class="hero-video"
+            aria-label="Vídeo da Feira Emprego Já"
+          ></video>
+        </div>
+
+        <!-- Ticket visual decorativo com dados do evento -->
+        <div class="ticket">
+          <div class="ticket-top">
+            <div class="ticket-edition">
+              Feira Emprego Já
+              <strong>2026</strong>
+            </div>
+            <div class="ticket-stamp">Seja<br>Expositor</div>
+          </div>
+
+          <div class="ticket-rows">
+            <div class="ticket-row">
+              <div class="ticket-field">
+                <small>Data</small>
+                <strong>01 Ago 2026</strong>
+              </div>
+              <div class="ticket-field">
+                <small>Local</small>
+                <strong>FIDAM</strong>
+              </div>
+            </div>
+            <div class="ticket-row">
+              <div class="ticket-field">
+                <small>Cidade</small>
+                <strong>Americana — SP</strong>
+              </div>
+              <div class="ticket-field">
+                <small>Edição</small>
+                <strong>2026</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="ticket-foot">
+            <span>EJ · 2026 · EXPOSITOR</span>
+            <!-- Código de barras decorativo -->
+            <div class="barcode" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ========================================================
+     MARQUEE — faixa animada com palavras-chave do evento
+     ======================================================== -->
+<div class="scroll-marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Captação de talentos</span>
+    <span>Networking regional</span>
+    <span>Processo seletivo no local</span>
+    <span>Responsabilidade social</span>
+    <span>Conexões reais</span>
+    <!-- Conteúdo duplicado para o efeito de loop contínuo -->
+    <span>Captação de talentos</span>
+    <span>Networking regional</span>
+    <span>Processo seletivo no local</span>
+    <span>Responsabilidade social</span>
+    <span>Conexões reais</span>
+  </div>
+</div>
+
+<!-- ========================================================
+     SEÇÃO 01 — Por que participar
+     4 pilares com ícones e descrições
+     ======================================================== -->
+<section class="why" id="porque">
+  <div class="container">
+    <div class="section-eyebrow">01 · Por que participar</div>
+    <h2 class="section-title">O ambiente certo para encontrar quem sua empresa procura.</h2>
+    <p class="section-lede">Mais do que uma feira, é o ponto de encontro entre marca, talento e oportunidade — pensado para gerar resultado já no dia do evento.</p>
+
+    <div class="pillars">
+
+      <!-- Pilar 1: Captação de talentos -->
+      <div class="pillar">
+        <div class="pillar-num">/ 01</div>
+        <div class="pillar-icon">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="9" cy="8" r="3.5"/><path d="M2.5 19c.6-3 3.4-4.5 6.5-4.5s5.9 1.5 6.5 4.5"/>
+            <circle cx="17" cy="6.5" r="2.5"/><path d="M15 13.5c2-.3 4.5.6 5.5 2.5"/>
+          </svg>
+        </div>
+        <h3>Captação de talentos</h3>
+        <p>Acesso direto a milhares de candidatos qualificados de diversos perfis e segmentos em um único local.</p>
+      </div>
+
+      <!-- Pilar 2: Processo seletivo -->
+      <div class="pillar">
+        <div class="pillar-num">/ 02</div>
+        <div class="pillar-icon">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="3.5" y="4.5" width="17" height="15" rx="2"/>
+            <path d="M7 9h10M7 13h6M7 17h4"/><circle cx="17" cy="16" r="2.2"/>
+          </svg>
+        </div>
+        <h3>Processo seletivo</h3>
+        <p>Análise de currículos, entrevistas, testes práticos e contratações realizadas no próprio ambiente do evento.</p>
+      </div>
+
+      <!-- Pilar 3: Responsabilidade social -->
+      <div class="pillar">
+        <div class="pillar-num">/ 03</div>
+        <div class="pillar-icon">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M12 21s-7-4.5-7-10a4.5 4.5 0 0 1 8.5-2 4.5 4.5 0 0 1 8.5 2c0 .9-.2 1.8-.5 2.6"/>
+            <path d="M14 17l2.2 2.2L21 14.5"/>
+          </svg>
+        </div>
+        <h3>Responsabilidade social</h3>
+        <p>Evento sem fins lucrativos, focado em atender a população e as empresas da região com mão de obra qualificada de forma sustentável.</p>
+      </div>
+
+      <!-- Pilar 4: Networking regional -->
+      <div class="pillar">
+        <div class="pillar-num">/ 04</div>
+        <div class="pillar-icon">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="6" cy="7" r="2.2"/><circle cx="18" cy="7" r="2.2"/><circle cx="12" cy="17" r="2.2"/>
+            <path d="M7.5 9 11 15M16.5 9 13 15M8 7h8"/>
+          </svg>
+        </div>
+        <h3>Networking regional</h3>
+        <p>Conexão estratégica com indústrias, comércio e prestadores de serviços de diversos tamanhos e segmentos.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     SEÇÃO 02 — Resultados anteriores (1ª edição 2025)
+     Imagem + números de impacto
+     ======================================================== -->
+<section class="results" id="resultados">
+  <div class="container">
+    <div class="section-eyebrow">02 · Resultados anteriores</div>
+
+    <!-- Cabeçalho com texto à esquerda e imagem à direita -->
+    <div class="results-head">
+      <div>
+        <h2 class="section-title">1ª edição em 2025 — um sucesso absoluto.</h2>
+        <p>Os números da primeira edição mostram a força do evento e o potencial de retorno para a sua empresa em 2026.</p>
+      </div>
+
+      <!-- Imagem da edição anterior — troque o src para atualizar -->
+      <div class="results-image">
+        <img
+          src="assets/feiraEmprego2025_page-0001.jpg"
+          alt="Foto da 1ª edição da Feira Emprego Já 2025"
+          loading="lazy"
+        >
+      </div>
+    </div>
+
+    <!-- Estatísticas em grade de 4 colunas -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Visitantes</div>
+        <div class="stat-num"><span class="plus">+</span>4.000</div>
+        <div class="stat-sub">Público presente no evento</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Empresas</div>
+        <div class="stat-num"><span class="plus">+</span>40</div>
+        <div class="stat-sub">Marcas expositoras</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Vagas</div>
+        <div class="stat-num"><span class="plus">+</span>2.500</div>
+        <div class="stat-sub">Disponibilizadas na feira</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Currículos</div>
+        <div class="stat-num"><span class="plus">+</span>6.000</div>
+        <div class="stat-sub">Entregues e analisados</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     BANNER DE URGÊNCIA — destaque para vagas limitadas
+     ======================================================== -->
+<div class="urgency-banner">
+  <div class="container urgency-inner">
+    <div class="urgency-left">
+      <span class="urgency-dot"></span>
+      <span><strong>Vagas de expositor limitadas</strong> — garanta o espaço da sua empresa antes que esgote</span>
+    </div>
+    <a href="#contato" class="btn accent">Reservar meu espaço <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- ========================================================
+     SEÇÃO 03 — Cases de sucesso (depoimentos)
+     ======================================================== -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-eyebrow">03 · Cases de sucesso</div>
+    <h2 class="section-title">Empresas e talentos conectados.</h2>
+
+    <div class="testi-grid">
+
+      <!-- Depoimento 1 — candidato -->
+      <article class="testi">
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="testi-quote">"Saí da feira com duas propostas reais. O contato direto com o RH fez toda a diferença no meu processo."</p>
+        <div class="testi-author">
+          <div class="avatar accent" aria-hidden="true">MS</div>
+          <div class="testi-author-name">Marcos Silva</div>
+        </div>
+      </article>
+
+      <!-- Depoimento 2 — empresa -->
+      <article class="testi">
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="testi-quote">"Como empresa, a feira foi nossa melhor fonte de talentos. Fechamos 5 vagas estratégicas em um dia."</p>
+        <div class="testi-author">
+          <div class="avatar green" aria-hidden="true">AC</div>
+          <div class="testi-author-name">Ana Carolina</div>
+        </div>
+      </article>
+
+      <!-- Depoimento 3 — candidato -->
+      <article class="testi">
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="testi-quote">"Fiz entrevista e já tive retorno no mesmo dia. Foi transformador!"</p>
+        <div class="testi-author">
+          <div class="avatar ink" aria-hidden="true">RF</div>
+          <div class="testi-author-name">Ricardo Ferreira</div>
+        </div>
+      </article>
+
+      <!-- Depoimento 4 — recrutador -->
+      <article class="testi">
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="testi-quote">"A feira agilizou nosso processo e trouxe talentos prontos para o mercado."</p>
+        <div class="testi-author">
+          <div class="avatar accent" aria-hidden="true">LO</div>
+          <div class="testi-author-name">Lucas Oliveira</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     SEÇÃO 04 — O evento
+     Detalhes logísticos + infraestrutura do local
+     ======================================================== -->
+<section class="event" id="evento">
+  <div class="container">
+    <div class="section-eyebrow">04 · O evento</div>
+    <h2 class="section-title">Tudo preparado para um dia de conexões.</h2>
+
+    <div class="event-grid">
+
+      <!-- Card com informações do evento -->
+      <div class="event-card">
+        <div class="event-row">
+          <div class="ico" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Data</h4>
+            <p>01 de Agosto de 2026</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="ico" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Local</h4>
+            <p>FIDAM — Americana / SP</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="ico" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Formato</h4>
+            <p>Presencial · evento de um dia</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="ico" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 3 2.5 14 0 17M12 3.5c-2.5 3-2.5 14 0 17"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Alcance</h4>
+            <p>Empresas e profissionais da região</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card de infraestrutura do local -->
+      <div class="infra">
+        <h3>Infraestrutura completa</h3>
+        <p>Um espaço pensado para receber empresas, candidatos e suas famílias com conforto durante todo o evento.</p>
+        <ul>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>
+            Infraestrutura completa
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>
+            Praça de alimentação
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>
+            Espaço kids
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     SEÇÃO 05 — CTA final (chamada para ação)
+     Convite para as empresas entrarem em contato
+     ======================================================== -->
+<section class="cta" id="contato">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-inner">
+
+        <!-- Texto persuasivo -->
+        <div class="section-eyebrow">Oportunidade única · 01 Ago 2026</div>
+        <h2>Sua empresa na maior feira de empregos da região.</h2>
+        <p class="lede">Exponha sua marca para mais de 4.000 visitantes, contrate no dia do evento e fortaleça sua presença no ecossistema de negócios da região. <strong>Entre em contato agora e garanta sua vaga.</strong></p>
+
+        <!-- Lista de benefícios para a empresa -->
+        <ul class="cta-benefits">
+          <li><span class="cb-check">✓</span> Acesso a milhares de candidatos qualificados</li>
+          <li><span class="cb-check">✓</span> Processo seletivo completo no local</li>
+          <li><span class="cb-check">✓</span> Visibilidade em rádio, redes sociais e TV</li>
+          <li><span class="cb-check">✓</span> Networking com empresas da região</li>
+        </ul>
+
+        <!-- Contato: número + botão WhatsApp -->
+        <div class="cta-contact">
+          <small>Fale com a organização</small>
+          <div class="cta-contact-row">
+            <div class="cta-phone">(19) 98327-5538</div>
+            <a href="https://wa.me/5519983275538" target="_blank" rel="noopener noreferrer" class="btn">
+              <!-- Ícone do WhatsApp -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.5 3.5A11 11 0 0 0 3.6 17.2L2 22l4.9-1.5A11 11 0 1 0 20.5 3.5zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-2.9.9.9-2.8-.2-.3A9 9 0 1 1 12 20.5zm5-6.7c-.3-.1-1.6-.8-1.9-.9s-.4-.1-.6.1-.7.9-.9 1.1-.3.2-.6.1a7.4 7.4 0 0 1-3.7-3.2c-.3-.5.3-.5.8-1.6.1-.2 0-.4 0-.5l-.9-2c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1.1 2.7s1.9 2.9 4.6 4a16 16 0 0 0 1.5.5 3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/>
+              </svg>
+              Chamar no WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     RODAPÉ — logo e créditos
+     ======================================================== -->
+<footer>
+  <div class="container foot-inner">
+    <div class="brand">
+      <img src="assets/logoEmpregoJa.png" alt="Feira Emprego Já" class="brand-logo" width="auto" height="64" loading="lazy">
+    </div>
+    <small>© 2026 · Conectando empresas, talentos e networking</small>
+  </div>
+</footer>
+
+</body>
+</html>
