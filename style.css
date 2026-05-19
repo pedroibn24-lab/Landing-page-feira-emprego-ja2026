@@ -131,6 +131,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 480px) {
   .container { padding: 0 20px; }
   .nav-inner  { padding: 10px 20px; }
+  section { padding: 64px 0; }
 }
 
 /* ============================================================
@@ -519,9 +520,17 @@ section { padding: 96px 0; }
 .stat-sub { color: rgba(245, 241, 232, .6); font-size: 13px; margin-top: 12px; }
 
 @media (max-width: 760px) {
-  .stats { grid-template-columns: 1fr 1fr; }
-  .stat  { border-bottom: 1px solid rgba(245, 241, 232, .15); }
+  .stats { grid-template-columns: 1fr 1fr; margin-top: 48px; }
+  .stat  { border-bottom: 1px solid rgba(245, 241, 232, .15); padding: 28px 16px; }
   .stat:nth-child(2n) { border-right: none; }
+  .stat-num { font-size: clamp(36px, 10vw, 56px); }
+}
+
+@media (max-width: 480px) {
+  .stats { grid-template-columns: 1fr; }
+  .stat  { border-right: none; }
+  .stat-num { font-size: clamp(40px, 12vw, 56px); }
+  .results-head { gap: 32px; }
 }
 
 /* ============================================================
