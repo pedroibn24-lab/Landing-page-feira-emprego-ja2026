@@ -1,5 +1,3 @@
-(Optei por não colocar as imagens no repositório do GitHub)
-
 # Feira Emprego Já 2026
 
 Landing page institucional desenvolvida para a divulgação da Feira Emprego Já 2026, focada na captação de empresas expositoras, talentos e networking regional.
