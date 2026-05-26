@@ -170,7 +170,7 @@ a { color: inherit; text-decoration: none; }
   padding: 72px 0 96px;
   position: relative;
   overflow: hidden;
-  background: url('assets/fidamFrente.jpeg') center / cover no-repeat;
+  background: url('assets/fidamFrente.webp') center / cover no-repeat;
 }
 
 /* Overlay claro para manter o texto legível sobre a foto */
@@ -620,7 +620,7 @@ section { padding: 96px 0; }
    Usa imagem ilustrativa como fundo com overlay
    ============================================================ */
 .event {
-  background: url('assets/ilustraçãoFeiraEmprego_page-0001.jpg') center / cover no-repeat;
+  background: url('assets/ilustraçãoFeiraEmprego_page-0001.webp') center / cover no-repeat;
   border-top: 1px solid var(--line);
   position: relative;
 }
